@@ -1,0 +1,11 @@
+name: Run for CI This Application
+on:
+  - push
+  - pull_request
+
+jobs:
+  lint-check:
+    runs-on: ubuntu-latest
+    steps:
+        -uses: actions/checkout@v4
+        -
