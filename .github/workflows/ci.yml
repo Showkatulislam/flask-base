@@ -1,0 +1,14 @@
+name: Runs Ci for Project
+on:
+  - push
+  - pull_request
+
+jobs:
+  lint-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      -name: build test runner docker image
+        run: docker compose build test_runner
+      -name: Run unit Test Runner
+        run: docker compose up --abort-on-container-exit test-runner
